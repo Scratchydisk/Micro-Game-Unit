@@ -1,0 +1,27 @@
+C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\Grot-Invaders.cpp.o: \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\Grot-Invaders.cpp \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/arduino.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/binary.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/WCharacter.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/WString.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/HardwareSerial.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Stream.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Print.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Printable.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/USBAPI.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Arduino.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\variants\eightanaloginputs/pins_arduino.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\variants\eightanaloginputs/../standard/pins_arduino.h \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\SSD1306.h \
+ C:\Users\Stewart\Documents\Arduino\libraries\Adafruit_GFX_Library/Adafruit_GFX.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Arduino.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Print.h \
+ C:\Users\Stewart\Documents\Arduino\libraries\Adafruit_GFX_Library/gfxfont.h \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\Display\Adafruit_SSD1306.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\libraries\SPI\src/SPI.h \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\SwarmManager.h \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\Invaders.h \
+ C:\Users\Stewart\Documents\Arduino\libraries\Adafruit_GFX_Library/gfxfont.h \
+ C:\Users\Stewart\AppData\Local\Temp\VMBuilds\Grot-Invaders\nano_atmega328\Release\InvaderResources.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\libraries\Wire\src/Wire.h \
+ C:\Users\Stewart\AppData\Local\arduino15\packages\arduino\hardware\avr\1.6.17\cores\arduino/Stream.h

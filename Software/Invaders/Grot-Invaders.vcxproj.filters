@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="__vm\.ssd1306_128x64_i2c.vsarduino.h" />
+    <ClInclude Include="Display\Adafruit_SSD1306.h">
+      <Filter>Display Library</Filter>
+    </ClInclude>
+    <ClInclude Include="InvaderResources.h" />
+    <ClInclude Include="__vm\.GrotInvaders.vsarduino.h" />
+    <ClInclude Include="Invaders.h" />
+    <ClInclude Include="SwarmManager.h" />
+    <ClInclude Include="SSD1306.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Grot-Invaders.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Display Library">
+      <UniqueIdentifier>{18cf3d0e-7a38-489d-991a-5a7c1ca04617}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Display\Adafruit_SSD1306.cpp">
+      <Filter>Display Library</Filter>
+    </ClCompile>
+    <ClCompile Include="InvaderResources.cpp" />
+    <ClCompile Include="Invaders.cpp" />
+    <ClCompile Include="SwarmManager.cpp" />
+    <ClCompile Include="SSD1306.cpp" />
+  </ItemGroup>
+</Project>
