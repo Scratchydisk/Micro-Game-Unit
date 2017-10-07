@@ -161,3 +161,9 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# Added by SourceTree
+
+Software/Invaders/__vm/*
+# Visual Micro say to keep the configuration files
+!Software/Invaders/__vm/Configuration*
