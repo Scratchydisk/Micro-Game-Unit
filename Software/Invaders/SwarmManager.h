@@ -46,7 +46,7 @@ void calculateSwarmSize();
 void createSwarm();
 void canSwarmShoot();
 void handleSwarmShots(uint8_t color);
-void swarmHitDetection();
+void baseHitDetection();
 
 #endif
 

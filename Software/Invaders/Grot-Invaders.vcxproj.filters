@@ -10,6 +10,7 @@
     <ClInclude Include="Invaders.h" />
     <ClInclude Include="SwarmManager.h" />
     <ClInclude Include="SSD1306.h" />
+    <ClInclude Include="__vm\.Invaders.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Grot-Invaders.ino" />

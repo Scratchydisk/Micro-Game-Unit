@@ -236,7 +236,7 @@ void handleSwarmShots(uint8_t color)
 	}
 }
 
-void swarmHitDetection()
+void baseHitDetection()
 {
 	for (int s = 0; s < MAX_SWARM_SHOTS; s++)
 	{

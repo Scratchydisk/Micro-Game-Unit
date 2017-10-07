@@ -36,6 +36,9 @@ bool gameStarted = false;
 int score = 0;
 bool baseHit = false;
 
+void newGame();
+void newTurn();
+
 
 void setup() {
 	Serial.begin(115200);
@@ -162,7 +165,7 @@ void newTurn()
 	createSwarm();
 }
 
-void hitDetection()
+void invaderHitDetection()
 {
 	if (!currentShot.active)
 		return;
@@ -299,8 +302,8 @@ void loop() {
 		display.clearDisplay();
 
 		// Hit detection here (so a dead invader is removed above)
-		hitDetection();
-		swarmHitDetection();
+		invaderHitDetection();
+		baseHitDetection();
 
 		moveSwarm();
 
