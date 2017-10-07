@@ -1,0 +1,58 @@
+; ====+  Net List for D:\Arduino\Projects\Micro Game Unit\Hardware\Micro Game Console - MPU Board.dsn  +====
+
+; ======+ The component list
+
+COMPONENT 'U1' = ARDUINO NANO
+	OPTION '$$SPICE_PROLOG_PRIORITY' = 5
+	OPTION '$$SPICE_EPILOG_PRIORITY' = 5
+	OPTION 'Package' = DIP30
+COMPONENT 'U3' = Piezo Oscillator
+	OPTION '$$SPICE_PROLOG_PRIORITY' = 5
+	OPTION '$$SPICE_EPILOG_PRIORITY' = 5
+	OPTION 'Package' = PIEZO_03x06
+COMPONENT 'J6' = Joystick
+	OPTION '$$SPICE_PROLOG_PRIORITY' = 5
+	OPTION '$$SPICE_EPILOG_PRIORITY' = 5
+	OPTION 'Package' = SIP4
+COMPONENT 'J4' = Power
+	OPTION '$$SPICE_PROLOG_PRIORITY' = 5
+	OPTION '$$SPICE_EPILOG_PRIORITY' = 5
+	OPTION 'Package' = SIP2
+	OPTION 'Other' = ..
+COMPONENT 'J5' = I2C Fire
+	OPTION '$$SPICE_PROLOG_PRIORITY' = 5
+	OPTION '$$SPICE_EPILOG_PRIORITY' = 5
+	OPTION 'Package' = SIP3
+
+
+; ======+ The net list
+
+NET  'GND' =  (U1,29),(U1,4),(J4,2),(U3,2)
+NET  'VCC' =  (U1,27),(J4,1)
+NET  'N000000' =  (U1,19)
+NET  'N000001' =  (U1,20)
+NET  'N000002' =  (U1,21)
+NET  'N000003' =  (U1,22)
+NET  'N000004' =  (U1,28)
+NET  'N000005' =  (U1,18)
+NET  'N000006' =  (U1,17)
+NET  'N000007' =  (U1,30)
+NET  'N000008' =  (U1,2)
+NET  'N000009' =  (U1,1)
+NET  'N000010' =  (U1,5),(J5,3)
+NET  'N000011' =  (U1,6),(J6,4)
+NET  'N000012' =  (U1,7),(J6,3)
+NET  'N000013' =  (U1,8),(J6,2)
+NET  'N000014' =  (U1,9),(J6,1)
+NET  'N000015' =  (U1,10),(U3,1)
+NET  'N000016' =  (U1,11)
+NET  'N000017' =  (U1,12)
+NET  'N000018' =  (U1,13)
+NET  'N000019' =  (U1,14)
+NET  'N000020' =  (U1,15)
+NET  'N000021' =  (U1,16)
+NET  'N000022' =  (U1,25)
+NET  'N000023' =  (U1,26)
+NET  'N000024' =  (U1,3)
+NET  'N000025' =  (J5,1),(U1,23)
+NET  'N000026' =  (J5,2),(U1,24)
