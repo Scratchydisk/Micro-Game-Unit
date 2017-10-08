@@ -137,6 +137,7 @@ download the executable.-->
 				<POS>0.00000,0.00000</POS>
 			</FIELD>
 			<REF_POINT power='0' part='0' pos='94.00000,72.00000'/>
+			<REF_POINT power='1' part='0' pos='94.00000,72.00000'/>
 			<TinyCAD>
 				<RECTANGLE a='72.00000,34.00000' b='94.00000,68.00000' style='4' fill='0'/>
 				<PIN pos='78.00000,72.00000' which='4' elec='0' direction='0' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'>GND</PIN>
@@ -349,7 +350,7 @@ download the executable.-->
 		<WIRE a='142.00000,54.00000' b='142.00000,55.28571'/>
 		<SYMBOL id='3' pos='136.00000,34.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J1' show='1' pos='1.00000,-3.60000'/>
-			<FIELD type='0' description='Name' value='Power' show='1' pos='1.00000,-6.00000'/>
+			<FIELD type='0' description='Name' value='5V' show='1' pos='1.00000,-6.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP2' show='0' pos='1.00000,-1.20000'/>
@@ -358,7 +359,6 @@ download the executable.-->
 		<POWER pos='124.00000,26.00000' which='3' direction='0'>VCC</POWER>
 		<POWER pos='124.00000,32.00000' which='4' direction='1'>GND</POWER>
 		<WIRE a='124.00000,26.00000' b='124.00000,28.00000'/>
-		<WIRE a='124.00000,28.00000' b='128.00000,28.00000'/>
 		<WIRE a='124.00000,32.00000' b='128.00000,32.00000'/>
 		<WIRE a='128.00000,32.00000' b='128.00000,31.00000'/>
 		<SYMBOL id='4' pos='150.00000,142.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
@@ -406,5 +406,6 @@ download the executable.-->
 		<JUNCTION pos='176.00000,95.00000'/>
 		<JUNCTION pos='176.00000,122.00000'/>
 		<JUNCTION pos='176.00000,148.00000'/>
+		<WIRE a='124.00000,28.00000' b='128.00000,28.00000'/>
 	</TinyCAD>
 </TinyCADSheets>

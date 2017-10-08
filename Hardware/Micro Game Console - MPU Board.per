@@ -6,8 +6,8 @@ File,18
   "NetImportFormat" : "Protel"
 },
 "Board" : {
-  "Width" : 22,
-  "Height" : 24,
+  "Width" : 19,
+  "Height" : 23,
   "Pattern" : "Strip"
 },
 "CelledOutlines" : [
@@ -120,17 +120,7 @@ File,18
 "SmdOutlines" : [
 ],
 "Components" : [
-  { "Designator" : "B1", "Value" : "1.5V", "Outline" : "AA Cell",
-  "X1000" : 2000, "Y1000" : 3000, "EndDeltaX" : 0, "EndDeltaY" : 1,
-  "Text" : { "X" : 1, "Y" : -1, "Angle" : 0, "Visible" : true },
-  "Group" : 0
-  },
-  { "Designator" : "B2", "Value" : "1.5V", "Outline" : "AA Cell",
-  "X1000" : 18000, "Y1000" : 21000, "EndDeltaX" : 0, "EndDeltaY" : -1,
-  "Text" : { "X" : 3, "Y" : 19, "Angle" : 0, "Visible" : true },
-  "Group" : 0
-  },
-  { "Designator" : "J4", "Value" : "Power", "Outline" : "SIP2",
+  { "Designator" : "J4", "Value" : "5V", "Outline" : "SIP2",
   "X1000" : 1000, "Y1000" : 11000, "EndDeltaX" : 0, "EndDeltaY" : 1,
   "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
@@ -141,7 +131,7 @@ File,18
   "Group" : 0
   },
   { "Designator" : "J6", "Value" : "Joystick", "Outline" : "SIP4",
-  "X1000" : 20000, "Y1000" : 6000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "X1000" : 17000, "Y1000" : 6000, "EndDeltaX" : 0, "EndDeltaY" : 1,
   "Text" : { "X" : -1, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
@@ -154,49 +144,53 @@ File,18
   "X1000" : 10000, "Y1000" : 17000, "EndDeltaX" : 0, "EndDeltaY" : 3,
   "Text" : { "X" : 0, "Y" : 5, "Angle" : 0, "Visible" : true },
   "Group" : 0
+  },
+  { "Designator" : "J7", "Value" : "Vin", "Outline" : "SIP2",
+  "X1000" : 1000, "Y1000" : 14000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
   }
 ],
 "Links" : [
-  { "X" : 20, "Y" : 10, "EndDeltaX" : 0, "EndDeltaY" : 5, "Group" : 0 },
-  { "X" : 3, "Y" : 9, "EndDeltaX" : 0, "EndDeltaY" : 6, "Group" : 0 },
-  { "X" : 14, "Y" : 11, "EndDeltaX" : 0, "EndDeltaY" : 9, "Group" : 0 },
-  { "X" : 2, "Y" : 12, "EndDeltaX" : 0, "EndDeltaY" : 1, "Group" : 0 },
-  { "X" : 1, "Y" : 13, "EndDeltaX" : 0, "EndDeltaY" : 7, "Group" : 0 },
-  { "X" : 19, "Y" : 5, "EndDeltaX" : 0, "EndDeltaY" : 12, "Group" : 0 },
-  { "X" : 18, "Y" : 3, "EndDeltaX" : 0, "EndDeltaY" : 8, "Group" : 0 },
-  { "X" : 5, "Y" : 3, "EndDeltaX" : 0, "EndDeltaY" : 11, "Group" : 0 }
+  { "X" : 18, "Y" : 11, "EndDeltaX" : 0, "EndDeltaY" : 9, "Group" : 0 },
+  { "X" : 3, "Y" : 12, "EndDeltaX" : 0, "EndDeltaY" : 1, "Group" : 0 },
+  { "X" : 6, "Y" : 13, "EndDeltaX" : 0, "EndDeltaY" : 7, "Group" : 0 },
+  { "X" : 16, "Y" : 5, "EndDeltaX" : 0, "EndDeltaY" : 12, "Group" : 0 },
+  { "X" : 5, "Y" : 13, "EndDeltaX" : 0, "EndDeltaY" : 2, "Group" : 0 },
+  { "X" : 15, "Y" : 10, "EndDeltaX" : 0, "EndDeltaY" : 6, "Group" : 0 },
+  { "X" : 4, "Y" : 9, "EndDeltaX" : 0, "EndDeltaY" : 7, "Group" : 0 }
 ],
 "Breaks" : [
-  { "X" : 10, "Y" : 8, "Shift" : "none", "Group" : 0 },
-  { "X" : 4, "Y" : 9, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 9, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 7, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 4, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 5, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 6, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 10, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 14, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 13, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 11, "Shift" : "none", "Group" : 0 },
-  { "X" : 4, "Y" : 12, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 12, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 2, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 3, "Shift" : "none", "Group" : 0 },
-  { "X" : 10, "Y" : 1, "Shift" : "none", "Group" : 0 },
   { "X" : 10, "Y" : 0, "Shift" : "none", "Group" : 0 },
-  { "X" : 6, "Y" : 3, "Shift" : "none", "Group" : 0 },
-  { "X" : 15, "Y" : 3, "Shift" : "none", "Group" : 0 }
+  { "X" : 10, "Y" : 1, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 3, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 2, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 12, "Shift" : "none", "Group" : 0 },
+  { "X" : 5, "Y" : 12, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 11, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 13, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 14, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 10, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 6, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 5, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 4, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 7, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 9, "Shift" : "none", "Group" : 0 },
+  { "X" : 5, "Y" : 9, "Shift" : "none", "Group" : 0 },
+  { "X" : 10, "Y" : 8, "Shift" : "none", "Group" : 0 }
 ],
 "Wires" : [
 ],
 "Text" : [
-    { "Value" : "+VE", "X" : 5, "Y" : 2, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "-VE", "X" : 17, "Y" : 2, "Angle" : 0, "Size" : "Small", "Group" : 0 }
 ],
 "Nets" : [
+    { "Node" : "5V", "Components" : [
+    { "Name" : "J4", "Pins" : ["1"] },
+    { "Name" : "U1", "Pins" : ["27"] }
+    ] },
     { "Node" : "GND", "Components" : [
-    { "Name" : "B2", "Pins" : ["2"] },
     { "Name" : "J4", "Pins" : ["2"] },
+    { "Name" : "J7", "Pins" : ["2"] },
     { "Name" : "U1", "Pins" : ["29", "4"] },
     { "Name" : "U3", "Pins" : ["2"] }
     ] },
@@ -232,25 +226,17 @@ File,18
     { "Name" : "J5", "Pins" : ["2"] },
     { "Name" : "U1", "Pins" : ["24"] }
     ] },
-    { "Node" : "N000008", "Components" : [
-    { "Name" : "B1", "Pins" : ["1"] },
+    { "Node" : "Vin", "Components" : [
+    { "Name" : "J7", "Pins" : ["1"] },
     { "Name" : "U1", "Pins" : ["30"] }
-    ] },
-    { "Node" : "N000009", "Components" : [
-    { "Name" : "B1", "Pins" : ["2"] },
-    { "Name" : "B2", "Pins" : ["1"] }
-    ] },
-    { "Node" : "VCC", "Components" : [
-    { "Name" : "J4", "Pins" : ["1"] },
-    { "Name" : "U1", "Pins" : ["27"] }
     ] }
 ],
 "NetColors" : [
     { "Node" : "" },
     { "Node" : "" },
-    { "Node" : "VCC" },
     { "Node" : "" },
-    { "Node" : "GND" },
+    { "Node" : "" },
+    { "Node" : "" },
     { "Node" : "" }
 ]
 }
