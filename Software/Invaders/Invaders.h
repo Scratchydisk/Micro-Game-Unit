@@ -20,7 +20,9 @@
 #define START_BUTTON 2
 #define LEFT_BUTTON  3
 #define RIGHT_BUTTON 4
-#define AUDIO_PIN    5
+#define DOWN_BUTTON	 5
+#define UP_BUTTON	 6
+#define AUDIO_PIN    7
 
 
 struct PlayerShot
