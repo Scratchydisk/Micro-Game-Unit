@@ -15,6 +15,13 @@
 #include <Adafruit_GFX.h>
 #include "Display\Adafruit_SSD1306.h"
 
+#if _DEBUG
+// Debug level optimizations - do not affect debugging
+#pragma GCC optimize ("Og")
+#else
+#pragma GCC optimize ("O3")
+#endif
+
 #define OLED_RESET 4
 extern Adafruit_SSD1306 display;
 

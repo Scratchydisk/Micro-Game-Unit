@@ -11,6 +11,13 @@
 
 #include "Invaders.h"
 
+#if _DEBUG
+// Debug level optimizations - do not affect debugging
+#pragma GCC optimize ("Og")
+#else
+#pragma GCC optimize ("O3")
+#endif
+
 #define MAX_SWARM_SHOTS 4
 
 // Holds the shots fired by the swarm

@@ -15,6 +15,12 @@ All text above, and the splash screen must be included in any redistribution
 #include <Adafruit_GFX.h>
 #include "Display\Adafruit_SSD1306.h"
 
+#if _DEBUG
+// Debug level optimizations - do not affect debugging
+#pragma GCC optimize ("Og")
+#else
+#pragma GCC optimize ("O3")
+#endif
 
 
 /**** SETTINGS FOR DEMO MODE ****/

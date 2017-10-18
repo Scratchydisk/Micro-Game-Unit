@@ -18,6 +18,13 @@ All text above, and the splash screen must be included in any redistribution
 #ifndef _Adafruit_SSD1306_H_
 #define _Adafruit_SSD1306_H_
 
+#if _DEBUG
+// Debug level optimizations - do not affect debugging
+#pragma GCC optimize ("Og")
+#else
+#pragma GCC optimize ("O3")
+#endif
+
 #if ARDUINO >= 100
  #include "Arduino.h"
  #define WIRE_WRITE Wire.write

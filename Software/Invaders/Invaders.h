@@ -9,6 +9,13 @@
 #include "WProgram.h"
 #endif
 
+#if DEBUG
+// Debug level optimizations - do not affect debugging
+#pragma GCC optimize ("Og")
+#else
+#pragma GCC optimize ("O3")
+#endif
+
 /**** Pin mapping ****/
 #define START_BUTTON 2
 #define LEFT_BUTTON  3
