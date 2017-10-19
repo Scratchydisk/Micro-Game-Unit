@@ -22,8 +22,11 @@
 #define RIGHT_BUTTON 4
 #define DOWN_BUTTON	 5
 #define UP_BUTTON	 6
-#define AUDIO_PIN    7
+#define REAL_AUDIO_PIN 7;
 
+// The code uses this and it can change to 
+// disable audio output
+extern uint8_t AUDIO_PIN;
 
 struct PlayerShot
 {
@@ -44,6 +47,7 @@ extern PlayerShot currentShot;
 
 extern uint8_t baseX;
 extern int score;
+extern uint8_t lives;
 extern bool baseHit;
 
 #endif

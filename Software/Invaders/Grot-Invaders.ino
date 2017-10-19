@@ -41,9 +41,12 @@ bool gameStarted = false;
 
 int score = 0;
 bool baseHit = false;
+uint8_t lives = 3;
+uint8_t AUDIO_PIN;
 
 void newGame();
 void newTurn();
+void gameOver();
 
 
 void setup() {
@@ -59,6 +62,7 @@ void setup() {
 
 	// Initialise pins
 	pinMode(START_BUTTON, INPUT_PULLUP);
+	pinMode(UP_BUTTON, INPUT_PULLUP);
 	pinMode(LEFT_BUTTON, INPUT_PULLUP);
 	pinMode(RIGHT_BUTTON, INPUT_PULLUP);
 
@@ -87,10 +91,19 @@ void newGame()
 	int delayCount = 0;
 	bool showScoring = false;
 	baseHit = false;
+	AUDIO_PIN = REAL_AUDIO_PIN;
 
 	while (!startPressed)
 	{
 		int startState = digitalRead(START_BUTTON);
+		int silentStart = digitalRead(UP_BUTTON);
+		if (silentStart == LOW)
+		{
+			// Disable audio out
+			AUDIO_PIN = 0;	
+			startState = LOW;  // force start
+		}
+
 		startPressed = startState == LOW;
 		delayCount += 100;
 		if (delayCount == 4000)
@@ -109,6 +122,7 @@ void newGame()
 	}
 
 	score = 0;
+	lives = 3;
 
 	// Initialise screen
 	newTurn();
@@ -263,7 +277,7 @@ void updateText(uint16_t color)
 	display.setTextColor(color);
 	display.setTextSize(1);
 	display.setCursor(0, 0);
-	display.print("SCORE ");
+	//display.print("SCORE ");
 	display.print(score);
 }
 
@@ -296,6 +310,12 @@ void loop() {
 		else
 			myDrawBitmap_P(baseX, BASE_Y, baseIcon, BASE_WIDTH, BASE_HEIGHT, WHITE);
 
+		// Draw lives
+		for (uint8_t x = VIEW_WIDTH - BASE_WIDTH, l = lives; l > 0; l--, x -= BASE_WIDTH + 1)
+		{
+			myDrawBitmap_P(x, 0, baseIcon, BASE_WIDTH, BASE_HEIGHT, WHITE);
+		}
+
 		calculateSwarmSize();
 		drawSwarm(WHITE);
 		handleShot(WHITE);
@@ -311,9 +331,30 @@ void loop() {
 		invaderHitDetection();
 		baseHitDetection();
 
+		if (lives == 0)
+		{
+			gameOver();
+		}
+
 		moveSwarm();
 
 		delay(10);
 	}
 }
 
+void gameOver()
+{
+	display.setTextColor(WHITE);
+	display.setTextSize(1);
+	display.setCursor(10, VIEW_HEIGHT / 2);
+	display.println("GAME OVER");
+	for (uint8_t i = 1; i < 4; i++)
+	{
+		delay(400);
+		display.invertDisplay(true);
+		delay(400);
+		display.invertDisplay(false);
+	}
+
+	newGame();
+}

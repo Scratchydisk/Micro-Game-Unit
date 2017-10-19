@@ -16,6 +16,7 @@ uint8_t swarmShotOdds;
 bool invaderFirstImage = true;
 bool movingLeft = true;
 
+void baseDestroyed();
 
 void createSwarm()
 {
@@ -266,12 +267,30 @@ void baseHitDetection()
 		if (swarmShots[s].y > VIEW_HEIGHT - BASE_HEIGHT - ALIEN_BOMB_HEIGHT)
 		{
 			// Shot is passing through base's horizontal area
-			if (swarmShots[s].x > baseX && swarmShots[s].x < baseX + BASE_WIDTH)
+			if (swarmShots[s].x >= baseX && swarmShots[s].x <= baseX + BASE_WIDTH)
 			{
 				// A hit
-				swarmShots[s].active = false;
-				baseHit = true;
+				baseDestroyed();
 			}
 		}
 	}
+}
+
+void baseDestroyed()
+{
+	baseHit = true;
+	lives--;
+
+	currentShot.active = false;
+
+	// Clear all swarm shots
+	for (int s = 0; s < MAX_SWARM_SHOTS; s++)
+		swarmShots[s].active = false;
+
+	tone(AUDIO_PIN, 4000, 80);
+
+	// Flash display
+	display.invertDisplay(true);
+	delay(400);
+	display.invertDisplay(false);
 }
