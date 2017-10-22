@@ -5,6 +5,7 @@
 #include "SSD1306.h"
 #include "SwarmManager.h"
 #include "InvaderResources.h"
+#include "Invaders.h"
 
 Swarm swarm;
 PlayerShot swarmShots[MAX_SWARM_SHOTS];

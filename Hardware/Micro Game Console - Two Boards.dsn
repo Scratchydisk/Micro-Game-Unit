@@ -422,6 +422,16 @@ download the executable.-->
 			<DATE>6/8/2017</DATE>
 			<GRID spacing='100.00000' snap='1'/>
 		</DETAILS>
+		<FONT id='0'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
 		<FONT id='1'>
 			<HEIGHT>-10</HEIGHT>
 			<WIDTH>0</WIDTH>
@@ -452,9 +462,18 @@ download the executable.-->
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
+		<STYLE id='5'>
+			<STYLE>0</STYLE>
+			<COLOR>FF0000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
 		<FILL id='0'>
 			<INDEX>-1</INDEX>
 			<COLOR>000000</COLOR>
+		</FILL>
+		<FILL id='2'>
+			<INDEX>0</INDEX>
+			<COLOR>AFFFFF</COLOR>
 		</FILL>
 		<SYMBOLDEF id='1'>
 			<NAME type='1'>ARDUINO NANO</NAME>
@@ -768,5 +787,14 @@ download the executable.-->
 		<JUNCTION pos='156.00000,26.00000'/>
 		<WIRE a='168.00000,26.00000' b='156.00000,26.00000'/>
 		<JUNCTION pos='128.00000,142.00000'/>
+		<TEXT pos='172.00000,110.00000' direction='3' font='0' color='000000'>1 - UP, 2 - DOWN, 3 - RIGHT, 4 - LEFT</TEXT>
+		<NOTE_TEXT a='208.00000,74.00000' b='230.00000,102.00000' direction='3' style='5' fill='2' font='0' color='FF0000' border_style='1'>Joystick Pins
+
+Fire - D2
+Left - D3
+Right - D4
+Down - D5
+Up - D6
+Audio - D7</NOTE_TEXT>
 	</TinyCAD>
 </TinyCADSheets>

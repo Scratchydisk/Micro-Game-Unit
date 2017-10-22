@@ -49,6 +49,6 @@ extern uint8_t baseX;
 extern int score;
 extern uint8_t lives;
 extern bool baseHit;
-
+	
 #endif
 

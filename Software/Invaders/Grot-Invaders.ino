@@ -5,6 +5,7 @@ BSD license, check license.txt for more information
 All text above, and the splash screen must be included in any redistribution
 *********************************************************************/
 
+#include <SPI.h>
 #include "SSD1306.h"
 #include "SwarmManager.h"
 #include <gfxfont.h>
@@ -14,6 +15,7 @@ All text above, and the splash screen must be included in any redistribution
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include "Display\Adafruit_SSD1306.h"
+#include "HighScoreTable.h"
 
 #if _DEBUG
 // Debug level optimizations - do not affect debugging
@@ -47,10 +49,11 @@ uint8_t AUDIO_PIN;
 void newGame();
 void newTurn();
 void gameOver();
+void showHighScores();
 
+HighScoreTable highScoreTable;
 
 void setup() {
-	Serial.begin(115200);
 	randomSeed(analogRead(0));
 
 	// Initialise display
@@ -63,6 +66,7 @@ void setup() {
 	// Initialise pins
 	pinMode(START_BUTTON, INPUT_PULLUP);
 	pinMode(UP_BUTTON, INPUT_PULLUP);
+	pinMode(DOWN_BUTTON, INPUT_PULLUP);
 	pinMode(LEFT_BUTTON, INPUT_PULLUP);
 	pinMode(RIGHT_BUTTON, INPUT_PULLUP);
 
@@ -81,43 +85,66 @@ volatile uint8_t fireButton;
 
 void newGame()
 {
-	// Show custom splash screen
-	display.clearDisplay();
-	display.drawBitmap(0, 0, splashImage, VIEW_WIDTH, VIEW_HEIGHT, WHITE);
-	display.display();
-
 	// Wait for start button (D2)
 	bool startPressed = false;
-	int delayCount = 0;
-	bool showScoring = false;
+	uint16_t delayCount = 0;
+	uint8_t currentScreen = 0;
 	baseHit = false;
 	AUDIO_PIN = REAL_AUDIO_PIN;
 
+	// Show screens while waiting for start
+	// Alternate individual screens with high score table
+	// FIRE - starts game with sound
+	// UP - starts game witn no sound
 	while (!startPressed)
 	{
-		int startState = digitalRead(START_BUTTON);
-		int silentStart = digitalRead(UP_BUTTON);
-		if (silentStart == LOW)
+		int startButton = digitalRead(START_BUTTON);
+		int upButton = digitalRead(UP_BUTTON);
+		int downButton = digitalRead(DOWN_BUTTON);
+
+		// High score reset?
+		if (upButton == LOW && downButton == LOW)
+		{
+			highScoreTable.InitialiseHighScores();
+			continue;
+		}
+
+		// Silent start
+		if (upButton == LOW && downButton == HIGH && startButton == HIGH)
 		{
 			// Disable audio out
-			AUDIO_PIN = 0;	
-			startState = LOW;  // force start
+			AUDIO_PIN = 0;
+			startPressed = true;
 		}
 
-		startPressed = startState == LOW;
-		delayCount += 100;
-		if (delayCount == 4000)
+		// If start pressed...
+		startPressed = startButton == LOW;
+
+		if (delayCount == 0)
 		{
-			showScoring = !showScoring;
-			delayCount = 0;
 			display.clearDisplay();
-			if (showScoring)
-				display.drawBitmap(0, 0, scoreSplashImage, VIEW_WIDTH, VIEW_HEIGHT, WHITE);
-			else
+
+			switch (currentScreen)
+			{
+			case 0:
 				display.drawBitmap(0, 0, splashImage, VIEW_WIDTH, VIEW_HEIGHT, WHITE);
+				break;
+			case 2:
+				display.drawBitmap(0, 0, scoreSplashImage, VIEW_WIDTH, VIEW_HEIGHT, WHITE);
+				break;
+			case 1:
+			case 3:
+				showHighScores();
+				break;
+			}
+
 			display.display();
+
+			// Cycle through the screens - currently 4
+			currentScreen = (currentScreen + 1) % 4;
 		}
 
+		delayCount = (delayCount + 100) % 4000;
 		delay(100);
 	}
 
@@ -277,7 +304,6 @@ void updateText(uint16_t color)
 	display.setTextColor(color);
 	display.setTextSize(1);
 	display.setCursor(0, 0);
-	//display.print("SCORE ");
 	display.print(score);
 }
 
@@ -342,6 +368,27 @@ void loop() {
 	}
 }
 
+void showHighScores()
+{
+	display.clearDisplay();
+	display.setTextSize(1);
+	display.setTextColor(WHITE);
+	display.setCursor(0, 10);
+	display.println("Top Scores");
+
+	display.setCursor(10, 40);
+	for (uint8_t i = 0; i < NUM_HIGH_SCORES; i++)
+	{
+		HighScore hs = highScoreTable.Scores[i];
+		display.print(hs.Initial1); 
+		display.print(hs.Initial2);
+		display.print(hs.Initial3);
+		display.print(' ');
+		display.println(hs.Score);
+		display.println();
+	}
+}
+
 void gameOver()
 {
 	display.setTextColor(WHITE);
@@ -355,6 +402,11 @@ void gameOver()
 		delay(400);
 		display.invertDisplay(false);
 	}
+
+	// Is this a high score?
+	int index = highScoreTable.IsNewHighScore(score);
+	showHighScores();
+	delay(4000);
 
 	newGame();
 }

@@ -11,6 +11,7 @@
     <ClInclude Include="SwarmManager.h" />
     <ClInclude Include="SSD1306.h" />
     <ClInclude Include="__vm\.Invaders.vsarduino.h" />
+    <ClInclude Include="HighScoreTable.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Grot-Invaders.ino" />
@@ -28,5 +29,6 @@
     <ClCompile Include="Invaders.cpp" />
     <ClCompile Include="SwarmManager.cpp" />
     <ClCompile Include="SSD1306.cpp" />
+    <ClCompile Include="HighScoreTable.cpp" />
   </ItemGroup>
 </Project>
